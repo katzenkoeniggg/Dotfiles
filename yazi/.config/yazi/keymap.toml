@@ -1,0 +1,29 @@
+# Go to HDD
+[[mgr.prepend_keymap]]
+on = ["g","e"]
+run = "cd /run/media/katzenkoenig/Data"
+desc = "Go to HDD"
+
+# Close and Restore Tabs
+[[mgr.prepend_keymap]]
+on = [ "<C-t>" ]
+run = "plugin close-and-restore-tab restore"
+desc = "Restore the previously closed tab"
+
+# Session Restore
+#[[mgr.prepend_keymap]]
+#on = [ "q" ]
+#run = "plugin autosession -- save-and-quit"
+#desc = "Save session and quit"
+
+# Recycle Bin
+[[mgr.prepend_keymap]]
+on = ["R","b"]
+run = "plugin recycle-bin"
+desc = "Open Recycle Bin menu"
+
+# Easyjump
+[[mgr.prepend_keymap]]
+on   = [ "i" ]
+run  = "plugin easyjump"
+desc = "easyjump"

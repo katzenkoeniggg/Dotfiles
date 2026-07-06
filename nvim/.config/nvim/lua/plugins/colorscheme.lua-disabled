@@ -1,0 +1,162 @@
+return {
+   {
+      "rebelot/kanagawa.nvim",
+      enabled = false,
+      lazy = false,
+      priority = 1000,
+      opts = {
+         transparent = true,
+      },
+      config = function(_, opts)
+         require("kanagawa").setup(opts)
+         vim.cmd.colorscheme("kanagawa-dragon")
+      end,
+   },
+   {
+      "Everblush/nvim",
+      name = "everblush",
+      enabled = false,
+      lazy = false,
+      priority = 1000,
+      opts = {
+         transparent_background = true,
+      },
+      config = function(_, opts)
+         require("everblush").setup(opts)
+         vim.cmd.colorscheme("everblush")
+      end,
+   },
+   {
+      "scottmckendry/cyberdream.nvim",
+      enabled = false,
+      lazy = false,
+      priority = 1000,
+      opts = {
+         transparent = true,
+      },
+      config = function(_, opts)
+         require("cyberdream").setup(opts)
+         vim.cmd.colorscheme("cyberdream")
+      end,
+   },
+   {
+      "navarasu/onedark.nvim",
+      enabled = false,
+      priority = 1000,
+      opts = {
+         style = "darker",
+         transparent = true,
+      },
+      config = function(_, opts)
+         require("onedark").setup(opts)
+         vim.cmd.colorscheme("onedark")
+      end,
+   },
+   {
+      "https://gitlab.com/motaz-shokry/gruvbox.nvim",
+      name = "gruvbox",
+      enabled = false,
+      priority = 1000,
+      opts = {
+         variant = "hard",
+         styles = {
+            transparency = true,
+         },
+      },
+      config = function(_, opts)
+         require("gruvbox").setup(opts)
+         vim.cmd.colorscheme("gruvbox")
+      end,
+   },
+   {
+      "ankushbhagats/pastel.nvim",
+      enabled = false,
+      priority = 1000,
+      opts = {
+         style = {
+            transparent = true,
+            dynamic_statusline = true,
+         },
+      },
+      config = function(_, opts)
+         require("pastel").setup(opts)
+         vim.cmd.colorscheme("pastelblack")
+      end,
+   },
+   {
+      "lancewilhelm/horizon-extended.nvim",
+      enabled = false,
+      priority = 1000,
+      opts = {
+         transparent = true,
+      },
+      config = function(_, opts)
+         require("horizon-extended").setup(opts)
+         vim.cmd.colorscheme("horizon-extended")
+      end,
+   },
+   {
+      "Shatur/neovim-ayu",
+      enabled = false,
+      priority = 1000,
+      opts = {
+         overrides = {
+            Normal = { bg = "None" },
+            NormalFloat = { bg = "none" },
+            ColorColumn = { bg = "None" },
+            SignColumn = { bg = "None" },
+            Folded = { bg = "None" },
+            FoldColumn = { bg = "None" },
+            CursorLine = { bg = "None" },
+            CursorColumn = { bg = "None" },
+            VertSplit = { bg = "None" },
+         },
+      },
+      config = function(_, opts)
+         require("ayu").setup(opts)
+         vim.cmd.colorscheme("ayu-dark")
+      end,
+   },
+   {
+      "catppuccin/nvim",
+      enabled = false,
+      lazy = false,
+      priority = 1000,
+      opts = {
+         transparent_background = true,
+      },
+      config = function(_, opts)
+         require("catppuccin").setup(opts)
+         vim.cmd.colorscheme("catppuccin")
+      end,
+   },
+   {
+      "ellisonleao/gruvbox.nvim",
+      enabled = true,
+      lazy = false,
+      priority = 1000,
+      opts = {
+         contrast = "", -- "hard", "soft", or "" (medium)
+         transparent_mode = true,
+      },
+      config = function(_, opts)
+         require("gruvbox").setup(opts)
+         vim.cmd.colorscheme("gruvbox")
+      end,
+   },
+   {
+      "folke/tokyonight.nvim",
+      enabled = false,
+      lazy = false,  -- make sure we load this during startup if it is your main colorscheme
+      priority = 1000, -- make sure to load this before all the other start plugins
+      opts = {
+         style = "night",
+         transparent = true,
+      },
+      config = function(_, opts)
+         require("tokyonight").setup(opts)
+         -- load the colorscheme here
+         vim.cmd([[colorscheme tokyonight]])
+      end,
+   },
+}

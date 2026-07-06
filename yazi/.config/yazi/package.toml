@@ -1,0 +1,44 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "38efe09"
+hash = "7b625412411be411153886894d9acaf"
+
+[[plugin.deps]]
+use = "MasouShizuka/close-and-restore-tab"
+rev = "b2153bc"
+hash = "1493e40f8f4f222c9ecb24cf85ccabd2"
+
+[[plugin.deps]]
+use = "barbanevosa/autosession"
+rev = "7a12b20"
+hash = "f9b76184511c983db7c6f719eea1e14d"
+
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "fa68711"
+hash = "8714306b5cac6359edbacbf545fbd691"
+
+[[plugin.deps]]
+use = "coder0x6675/osc7"
+rev = "ae73046"
+hash = "4f73595837992eeefcb525c0a95b92ba"
+
+[[plugin.deps]]
+use = "mikavilpas/easyjump.yazi:easyjump"
+rev = "0f3231d"
+hash = "b976709df0f6d3341736f053e87b2b8"
+
+[[flavor.deps]]
+use = "gosxrgxx/flexoki-dark"
+rev = "25d28ce"
+hash = "8e6dd7e42a127173e4535993d3e0e393"
+
+[[flavor.deps]]
+use = "matt-dong-123/gruvbox-material"
+rev = "e0fd2d8"
+hash = "8f46ca96c0bbe1bdfb4fa201dd5eed4b"
+
+[[flavor.deps]]
+use = "kmlupreti/ayu-dark"
+rev = "00804da"
+hash = "d2ce8358c59ea6e8552091075b3a191c"
