@@ -184,8 +184,6 @@ alias yz="yazi"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export GH_TOKEN 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
-
 ################################################################################
 # End of .zshrc
 ################################################################################
