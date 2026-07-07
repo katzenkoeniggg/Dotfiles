@@ -12,7 +12,7 @@ end)
 map("n", "Q", "<nop>")
 
 -- Ctrl+C as Escape in insert mode
-map("i", "<C-c>", "<Esc>")
+-- map("i", "<C-c>", "<Esc>")
 
 map("v", "J", ":m '>+1<cr>gv=gv")         -- move selection down
 map("v", "K", ":m '<-2<cr>gv=gv")         -- move selection up
@@ -25,7 +25,7 @@ map("n", "J", "mzJ`z")                    -- join lines without moving cursor
 
 map("x", "<leader>p", [["_dP]])           -- paste over selection WITHOUT losing clipboard (greatest remap ever)
 map({ "n", "v" }, "<leader>y", [["+y]])   -- yank to system clipboard
-map("n", "<leader>Y", [["+Y]])
+map("n", "<leader>Y", [["+Y]])            -- yank to system clipboard
 map({ "n", "v" }, "<leader>d", [["_d]])   -- delete to void register (doesn't overwrite clipboard)
 
 map("n", "<C-k>", "<cmd>cnext<cr>zz")     -- next quickfix item
@@ -57,7 +57,7 @@ map("n", "<C-k>", "<C-w>k", { desc = "Focus upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
 
 map("n", "<leader>wv", "<cmd>vsp<cr>", { desc = "Vertical split" })
-map("n", "<leader>wh", "<cmd>sp<cr>", { desc = "Horizontal split" })
+map("n", "<leader>ws", "<cmd>sp<cr>", { desc = "Horizontal split" })
 map("n", "<leader>wd", "<cmd>close<cr>", { desc = "Close window" })
 map("n", "<leader>wo", "<cmd>only<cr>", { desc = "Close other windows" })
 

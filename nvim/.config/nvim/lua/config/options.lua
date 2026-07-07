@@ -1,41 +1,46 @@
-local opt = vim.opt
+vim.opt.guicursor = ""
 
-opt.number = true
-opt.relativenumber = true
-opt.scrolloff = 10
-opt.smoothscroll = true
--- opt.list = true -- Show some invisible characters (tabs...
-opt.linebreak = true -- Wrap lines at convenient points
-opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
+vim.opt.smoothscroll = true
+-- vim.opt.list = true -- Show some invisible characters (tabs...
+vim.opt.linebreak = true -- Wrap lines at convenient points
+vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.mouse = "a" -- Enable mouse mode
 
-opt.laststatus = 3
-opt.showtabline = 2
-opt.tabstop = 3
-opt.softtabstop = 3
-opt.shiftwidth = 3
-opt.expandtab = true
-opt.smartindent = true
-opt.wrap = false
+vim.opt.laststatus = 3
+vim.opt.showtabline = 2
+vim.opt.tabstop = 3
+vim.opt.softtabstop = 3
+vim.opt.shiftwidth = 3
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.wrap = false
 
-opt.ignorecase = true
-opt.smartcase = true
-opt.termguicolors = true
-opt.signcolumn = "yes"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
 
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-opt.swapfile = false
-opt.backup = false
-opt.undofile = true
-opt.undodir = vim.fn.stdpath("data") .. "/undodir"
-opt.updatetime = 50
--- opt.clipboard = "unnamedplus"  -- sync with system clipboard (needs wl-clipboard on Wayland)
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
+vim.opt.updatetime = 50
+-- vim.opt.clipboard = "unnamedplus"  -- sync with system clipboard (needs wl-clipboard on Wayland)
 
-opt.hlsearch = false
-opt.incsearch = true
+vim.opt.pumblend = 10 -- Popup blend
+vim.opt.pumheight = 10 -- Maximum number of entries in a popup
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.o.cmdheight = 0
 
-opt.fillchars = {
+vim.opt.fillchars = {
   foldopen = "",
   foldclose = "",
   fold = " ",

@@ -8,7 +8,15 @@ return {
          "nvim-tree/nvim-web-devicons",
       },
       lazy = false,
+
       opts = {
+         filesystem = {
+            filtered_items = {
+               hide_dotfiles = false,
+               hide_hidden = false,
+            },
+         },
+
          window = {
             mappings = {
                ["<space>"] = { "toggle_node", nowait = false },
@@ -40,6 +48,7 @@ return {
          },
       },
    },
+
    {
       "Crysthamus/nvim-file-operations",
       -- branch = "compat" -- if you are on Neovim <= 0.10
@@ -48,6 +57,7 @@ return {
       },
       opts = {},
    },
+
    {
       "s1n7ax/nvim-window-picker",
       version = "2.*",
