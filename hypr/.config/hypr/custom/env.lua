@@ -1,7 +1,7 @@
 -- Environment variables
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
--- hl.env("QT_SCALE_FACTOR", "1")
+hl.env("QT_SCALE_FACTOR", "1")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")

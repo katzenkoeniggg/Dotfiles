@@ -7,12 +7,12 @@
 hl.config({
 	general = {
 		gaps_in = 4,
-		gaps_out = 9,
+      gaps_out = 9,
 		gaps_workspaces = 50,
 
-		border_size = 3,
+		border_size = 2,
 		col = {
-			active_border = "rgba(3e3e3eff)",
+			active_border = "rgba(62666caa)",
 			inactive_border = "rgba(191919aa)",
 		},
 
@@ -43,7 +43,7 @@ hl.config({
 		-- 2 = circle, higher = squircle, 4 = very obvious squircle
 		-- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
 		rounding_power = 4,
-		rounding = 24,
+		rounding = 4,
 		active_opacity = 1,
 		inactive_opacity = 1,
 
@@ -68,8 +68,9 @@ hl.config({
 
 		shadow = {
 			enabled = true,
-			range = 8,
+			range = 9,
 			render_power = 3,
+         sharp = false,
 			offset = { 0, 0 },
 			color = "rgba(1a1a1aee)",
 		},
@@ -88,7 +89,7 @@ hl.config({
 		repeat_rate = 35,
 
 		follow_mouse = 1,
-		sensitivity = 0.7,
+		sensitivity = 0.5,
 		accel_profile = "flat",
 		force_no_accel = true,
 		off_window_axis_events = 2,
@@ -186,8 +187,18 @@ hl.animation({
 })
 
 -- Popups
-hl.animation({ leaf = "fadePopupsIn", enabled = true, speed = 3, bezier = "expressiveFastSpatial" })
-hl.animation({ leaf = "fadePopupsOut", enabled = true, speed = 3, bezier = "expressiveFastSpatial" })
+hl.animation({
+	leaf = "fadePopupsIn",
+	enabled = true,
+	speed = 3,
+	bezier = "expressiveFastSpatial",
+})
+hl.animation({
+	leaf = "fadePopupsOut",
+	enabled = true,
+	speed = 3,
+	bezier = "expressiveFastSpatial",
+})
 
 -- Layers
 hl.animation({
@@ -223,7 +234,7 @@ hl.animation({
 hl.animation({
 	leaf = "workspaces",
 	enabled = true,
-	speed = 7,
+	speed = 10,
 	bezier = "menu_decel",
 	style = "slide",
 })

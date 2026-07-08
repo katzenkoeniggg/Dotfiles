@@ -140,7 +140,7 @@ hl.window_rule({
 })
 
 -- No shadow for tiled windows
-hl.window_rule({ match = { float = false }, no_shadow = true })
+hl.window_rule({ match = { float = false }, no_shadow = false })
 
 -- ######## Workspace rules ########
 hl.workspace_rule({ workspace = "special:special", gaps_out = 30 })
