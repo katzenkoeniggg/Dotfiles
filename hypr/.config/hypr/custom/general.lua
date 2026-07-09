@@ -42,8 +42,8 @@ hl.config({
 	decoration = {
 		-- 2 = circle, higher = squircle, 4 = very obvious squircle
 		-- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
-		rounding_power = 4,
 		rounding = 4,
+		rounding_power = 4.0,
 		active_opacity = 1,
 		inactive_opacity = 1,
 
@@ -53,9 +53,9 @@ hl.config({
 			special = false,
 			ignore_opacity = true,
 			new_optimizations = true,
-			size = 8,
-			passes = 3,
-			brightness = 1,
+			size = 2,
+			passes = 6,
+			brightness = 0.87,
 			noise = 0.05,
 			contrast = 1,
 			vibrancy = 0.1696,
