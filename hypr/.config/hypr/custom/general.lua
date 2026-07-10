@@ -12,7 +12,7 @@ hl.config({
 
 		border_size = 2,
 		col = {
-			active_border = "rgba(62666caa)",
+			active_border = "rgba(62666cee)",
 			inactive_border = "rgba(191919aa)",
 		},
 
@@ -42,8 +42,8 @@ hl.config({
 	decoration = {
 		-- 2 = circle, higher = squircle, 4 = very obvious squircle
 		-- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
-		rounding = 4,
-		rounding_power = 4.0,
+		rounding = 13,
+		rounding_power = 4,
 		active_opacity = 1,
 		inactive_opacity = 1,
 
@@ -68,7 +68,7 @@ hl.config({
 
 		shadow = {
 			enabled = true,
-			range = 9,
+			range = 8,
 			render_power = 3,
          sharp = false,
 			offset = { 0, 0 },
@@ -234,7 +234,7 @@ hl.animation({
 hl.animation({
 	leaf = "workspaces",
 	enabled = true,
-	speed = 10,
+	speed = 5,
 	bezier = "menu_decel",
 	style = "slide",
 })
