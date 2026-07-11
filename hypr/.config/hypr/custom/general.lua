@@ -44,11 +44,11 @@ hl.config({
 		-- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
 		rounding = 13,
 		rounding_power = 4,
-		active_opacity = 1,
-		inactive_opacity = 1,
+		active_opacity = 0.85,
+		inactive_opacity = 0.85,
 
 		blur = {
-			enabled = false,
+			enabled = true,
 			xray = false,
 			special = false,
 			ignore_opacity = true,
