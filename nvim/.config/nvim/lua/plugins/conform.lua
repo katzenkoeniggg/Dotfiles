@@ -25,7 +25,7 @@ return {
       fortmat_on_save = {
          lsp_format = "fallback",
          async = false,
-         timeout_ms = 500,
+         timeout_ms = 3000,
       },
       formatters_by_ft = {
          javascript = { "prettierd", "prettier" },

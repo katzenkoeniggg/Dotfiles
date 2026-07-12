@@ -85,8 +85,8 @@ hl.config({
 		kb_layout = "us",
 		kb_options = "caps:swapescape",
 		numlock_by_default = true,
-		repeat_delay = 250,
-		repeat_rate = 35,
+		repeat_delay = 300,
+		repeat_rate = 25,
 
 		follow_mouse = 1,
 		sensitivity = 0.5,
