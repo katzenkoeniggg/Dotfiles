@@ -37,7 +37,7 @@ map("n", "<leader>j", "<cmd>lprev<cr>zz") -- prev location list
 map("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- make current file executable
-map("n", "<leader>x", "<cmd>!chmod +x %<cr>", { silent = true })
+map("n", "<leader>xe", "<cmd>!chmod +x %<cr>", { silent = true, desc = "Make executable" })
 
 -- open tmux sessionizer (his project switcher)
 map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>")

@@ -6,8 +6,8 @@
 
 hl.config({
 	general = {
-		gaps_in = 4,
-      gaps_out = 9,
+		gaps_in = 5,
+		gaps_out = 10,
 		gaps_workspaces = 50,
 
 		border_size = 2,
@@ -70,7 +70,7 @@ hl.config({
 			enabled = true,
 			range = 8,
 			render_power = 3,
-         sharp = false,
+			sharp = false,
 			offset = { 0, 0 },
 			color = "rgba(1a1a1aee)",
 		},
@@ -89,7 +89,7 @@ hl.config({
 		repeat_rate = 25,
 
 		follow_mouse = 1,
-		sensitivity = 0.5,
+		sensitivity = 0.3,
 		accel_profile = "flat",
 		force_no_accel = true,
 		off_window_axis_events = 2,
@@ -98,7 +98,7 @@ hl.config({
 			natural_scroll = true,
 			disable_while_typing = true,
 			clickfinger_behavior = true,
-			scroll_factor = 0.4,
+			scroll_factor = 0.2,
 		},
 	},
 

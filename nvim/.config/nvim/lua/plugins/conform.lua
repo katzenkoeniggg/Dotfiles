@@ -1,8 +1,37 @@
 return {
    "stevearc/conform.nvim",
-   event = { "BufWritePre", "BufReadPre", "BufNewFile" },
-   cmd = { "ConformInfo" },
-   dependencies = { "mason-org/mason.nvim" },
+   opts = {
+      formatters_by_ft = {
+         javascript = { "prettierd", "prettier" },
+         typescript = { "prettierd", "prettier" },
+         javascriptreact = { "prettierd", "prettier" },
+         typescriptreact = { "prettierd", "prettier" },
+         svelte = { "prettierd", "prettier" },
+         css = { "prettierd", "prettier" },
+         html = { "prettierd", "prettier" },
+         json = { "prettierd", "prettier" },
+         yaml = { "prettierd", "prettier" },
+         toml = { "taplo" },
+         markdown = { "prettierd", "prettier" },
+         graphql = { "prettierd", "prettier" },
+         liquid = { "prettierd", "prettier" },
+         lua = { "stylua" },
+         python = { "ruff" },
+         sh = { "shfmt" },
+      },
+
+      format_on_save = {
+         lsp_format = "fallback",
+         timeout_ms = 500,
+      },
+
+      formatters = {
+         shfmt = {
+            append_args = { "-i", "2" },
+         },
+      },
+   },
+
    keys = {
       {
          "<leader>fm",
@@ -15,40 +44,6 @@ return {
          end,
          mode = "",
          desc = "Format buffer",
-      },
-   },
-
-   -- This will provide type hinting with LuaLS
-   ---@module "conform"
-   ---@type conform.setupOpts
-   opts = {
-      fortmat_on_save = {
-         lsp_format = "fallback",
-         async = false,
-         timeout_ms = 3000,
-      },
-      formatters_by_ft = {
-         javascript = { "prettierd", "prettier" },
-         typescript = { "prettierd", "prettier" },
-         javascriptreact = { "prettierd", "prettier" },
-         typescriptreact = { "prettierd", "prettier" },
-         svelte = { "prettierd", "prettier" },
-         css = { "prettierd", "prettier" },
-         html = { "prettierd", "prettier" },
-         json = { "prettierd", "prettier" },
-         yaml = { "prettierd", "prettier" },
-         markdown = { "prettierd", "prettier" },
-         graphql = { "prettierd", "prettier" },
-         liquid = { "prettierd", "prettier" },
-         lua = { "stylua" },
-         python = { "ruff" },
-         sh = { "shfmt" },
-      },
-
-      formatters = {
-         shfmt = {
-            append_args = { "-i", "2" },
-         },
       },
    },
 }

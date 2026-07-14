@@ -69,6 +69,15 @@ hl.window_rule({
 	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
 hl.window_rule({
+	match = {
+      class = "^(kitty)$",
+      title = "^(Yazi*)$",
+   },
+	center = true,
+	float = true,
+	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+})
+hl.window_rule({
 	match = { class = "^(pavucontrol)$" },
 	float = true,
 	center = true,
