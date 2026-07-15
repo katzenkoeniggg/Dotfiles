@@ -3,7 +3,7 @@
 # (Keep this at the very top to speed up prompt initialization)
 ################################################################################
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 bindkey -e
@@ -14,7 +14,7 @@ bindkey -e
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt share_history 
+setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
@@ -37,14 +37,14 @@ compinit
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33}%F{220}Installing %F{33}ZDHARMA-CONTINUUM Zinit…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33}%F{34}Installation successful.%f%b" || \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" &&
+        print -P "%F{33}%F{34}Installation successful.%f%b" ||
         print -P "%F{160}The clone has failed.%f%b"
 fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+((${+_comps})) && _comps[zinit]=_zinit
 
 # Load required Zinit annexes (without Turbo)
 zinit light-mode for \
@@ -60,7 +60,8 @@ zinit light-mode for \
 zi light Aloxaf/fzf-tab
 
 # Powerlevel10k (ensure it's loaded before other plugins that wrap widgets)
-zi ice depth=1; zi light romkatv/powerlevel10k
+zi ice depth=1
+zi light romkatv/powerlevel10k
 
 # Zsh completions (for additional command completions)
 zi light zsh-users/zsh-completions
@@ -78,18 +79,18 @@ zi light zdharma-continuum/fast-syntax-highlighting
 source <(fzf --zsh)
 
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden \
-   --exclude .git --exclude node_modules --exclude .cache \
-   --exclude .cargo --exclude .npm --exclude .icons \
-   --exclude go --exclude iOS\ Backup"
+    --exclude .git --exclude node_modules --exclude .cache \
+    --exclude .cargo --exclude .npm --exclude .icons \
+    --exclude go --exclude iOS\ Backup"
 
 export FZF_DEFAULT_OPTS=$'--style=full
-  --layout=reverse-list
-  --info=inline-right
-  --margin=2
-  --header-border=inline
-  --footer-border=inline
-  --preview-border=dashed
-  --bind ctrl-d:half-page-down,ctrl-u:half-page-up'
+    --layout=reverse-list
+    --info=inline-right
+    --margin=2
+    --header-border=inline
+    --footer-border=inline
+    --preview-border=dashed
+    --bind ctrl-d:half-page-down,ctrl-u:half-page-up'
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -100,50 +101,49 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+    --walker-skip .git,node_modules,target
+    --preview 'bat -n --color=always {}'
+    --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # CTRL-Y to copy the command into clipboard using pbcopy
 export FZF_CTRL_R_OPTS="
-   --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
-   --color header:italic
-   --header 'Press CTRL-Y to copy command into clipboard'"
+    --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
+    --color header:italic
+    --header 'Press CTRL-Y to copy command into clipboard'"
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
 # - You should make sure to pass the rest of the arguments to fzf.
 _fzf_comprun() {
-  local command=$1
-  shift
+    local command=$1
+    shift
 
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
-  esac
+    case "$command" in
+    cd) fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export | unset) fzf --preview "eval 'echo \${}'" "$@" ;;
+    ssh) fzf --preview 'dig {}' "$@" ;;
+    *) fzf --preview "$show_file_or_dir_preview" "$@" ;;
+    esac
 }
 
 # ripgrep->fzf->nvim [QUERY]
 fif() (
-  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
-  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+    RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+    OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
             nvim {1} +{2}     # No selection. Open the current line in Vim.
           else
             nvim +cw -q {+f}  # Build quickfix list for the selected items.
           fi'
-  fzf --disabled --ansi --multi \
-      --bind "start:$RELOAD" --bind "change:$RELOAD" \
-      --bind "enter:become:$OPENER" \
-      --bind "ctrl-o:execute:$OPENER" \
-      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
-      --delimiter : \
-      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
-      --preview-window '~4,+{2}+4/3,<80(up)' \
-      --query "$*"
+    fzf --disabled --ansi --multi \
+        --bind "start:$RELOAD" --bind "change:$RELOAD" \
+        --bind "enter:become:$OPENER" \
+        --bind "ctrl-o:execute:$OPENER" \
+        --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+        --delimiter : \
+        --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+        --preview-window '~4,+{2}+4/3,<80(up)' \
+        --query "$*"
 )
-
 
 # To make fzf-tab follow FZF_DEFAULT_OPTS.
 # NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
