@@ -6,7 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-bindkey -e
+### Vim Mode
+bindkey -v
 
 ################################################################################
 # Shell History and Basic Keybindings
@@ -22,6 +23,8 @@ setopt hist_verify
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+bindkey -M vicmd 'k' history-search-backward
+bindkey -M vicmd 'j' history-search-forward
 
 ################################################################################
 # Zsh Completion Setup (Compinit)
@@ -34,15 +37,11 @@ compinit
 ################################################################################
 # Zinit Installer and Plugin Manager Initialization
 ################################################################################
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33}%F{220}Installing %F{33}ZDHARMA-CONTINUUM Zinit…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" &&
-        print -P "%F{33}%F{34}Installation successful.%f%b" ||
-        print -P "%F{160}The clone has failed.%f%b"
-fi
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 ((${+_comps})) && _comps[zinit]=_zinit
 
@@ -56,21 +55,49 @@ zinit light-mode for \
 ################################################################################
 # Plugin Loading via Zinit
 ################################################################################
-# fzf-tab for interactive file completion
-zi light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+zinit light MichaelAquilina/zsh-you-should-use
+zinit light jeffreytse/zsh-vi-mode
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
-# Powerlevel10k (ensure it's loaded before other plugins that wrap widgets)
-zi ice depth=1
-zi light romkatv/powerlevel10k
+### Snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+zinit ice lucid wait
+zinit snippet OMZP::fzf
 
-# Zsh completions (for additional command completions)
-zi light zsh-users/zsh-completions
+### Plugins Config
+# FZF-Tab Config
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*:descriptions' format '[%d]'
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --tree -L 3 --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --tree -L 3 --color=always $realpath'
+# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+# zstyle ':fzf-tab:*' use-fzf-default-opts yes
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:complete:*:*' fzf-preview \
+    'bat --style=numbers --color=always --line-range=:300 $realpath 2>/dev/null || \
+    eza -1 --icons -T -L 2 --color=always $realpath'
+zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
+    'git log --oneline --graph --decorate --color=always -n 20 ${(Q)word}'
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
-# Zsh autosuggestions for improved command line experience
-zi light zsh-users/zsh-autosuggestions
+ZVM_CURSOR_STYLE_ENABLED=false
 
-# Fast syntax highlighting (choose one: either fast-syntax-highlighting or zsh-syntax-highlighting)
-zi light zdharma-continuum/fast-syntax-highlighting
+# You-should-use Conf
+export YSU_MESSAGE_FORMAT="$(tput setaf 1)Hey! I found this %alias_type for %command: %alias$(tput sgr0)"
 
 ################################################################################
 # fzf Configuration and Key Bindings
@@ -107,9 +134,7 @@ export FZF_CTRL_T_OPTS="
 
 # CTRL-Y to copy the command into clipboard using pbcopy
 export FZF_CTRL_R_OPTS="
-    --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
-    --color header:italic
-    --header 'Press CTRL-Y to copy command into clipboard'"
+    --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'"
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
@@ -128,7 +153,7 @@ _fzf_comprun() {
 
 # ripgrep->fzf->nvim [QUERY]
 fif() (
-    RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+    RELOAD='reload:rg --hidden --column --color=always --smart-case {q} || :'
     OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
             nvim {1} +{2}     # No selection. Open the current line in Vim.
           else
@@ -152,7 +177,7 @@ fif() (
 ################################################################################
 # zoxide Initialization (Directory Jumping)
 ################################################################################
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 
 ################################################################################
 # Custom PATH additions
@@ -171,8 +196,7 @@ alias pakse="flatpak search"
 alias pakrm="flatpak remove --unused"
 alias gamesh="bash gameshell.sh"
 alias svim="sudoedit"
-alias ls="eza --color=always --all --group-directories-first --sort extension --git --icons=always --no-time --no-user --no-permissions"
-alias ll="ls -lah"
+alias ll="eza -1 --color=always --icons=always -a --group-directories-first -s extension --git"
 alias dload="aria2c -x 8 -s 8 -j 2 -c -d ~/Downloads"
 alias ff="fastfetch"
 alias yz="yazi"
@@ -185,6 +209,7 @@ alias yz="yazi"
 export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR=nvim
+export SUDO_EDITOR=nvim
 export VISUAL=nvim
 export SYSTEMD_EDITOR=nvim
 
