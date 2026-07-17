@@ -27,14 +27,6 @@ bindkey -M vicmd 'k' history-search-backward
 bindkey -M vicmd 'j' history-search-forward
 
 ################################################################################
-# Zsh Completion Setup (Compinit)
-################################################################################
-# (Configured by compinstall; ensures proper tab-completion behavior)
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
-
-################################################################################
 # Zinit Installer and Plugin Manager Initialization
 ################################################################################
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -95,9 +87,17 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
 # zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 ZVM_CURSOR_STYLE_ENABLED=false
+ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
 # You-should-use Conf
 export YSU_MESSAGE_FORMAT="$(tput setaf 1)Hey! I found this %alias_type for %command: %alias$(tput sgr0)"
+
+################################################################################
+# Zsh Completion Setup (Compinit)
+################################################################################
+autoload -Uz compinit
+compinit
+zi cdreplay -q
 
 ################################################################################
 # fzf Configuration and Key Bindings
@@ -195,8 +195,8 @@ alias pakun="flatpak uninstall"
 alias pakse="flatpak search"
 alias pakrm="flatpak remove --unused"
 alias gamesh="bash gameshell.sh"
-alias svim="sudoedit"
-alias ll="eza -1 --color=always --icons=always -a --group-directories-first -s extension --git"
+alias ll="eza -1la --color=always --icons=always --group-directories-first --git --no-permissions --no-user --no-time"
+alias lx="eza -1la --color=always --icons=always --group-directories-first --git --git-repos --no-user --no-time"
 alias dload="aria2c -x 8 -s 8 -j 2 -c -d ~/Downloads"
 alias ff="fastfetch"
 alias yz="yazi"

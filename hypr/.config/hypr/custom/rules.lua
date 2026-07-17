@@ -6,9 +6,11 @@
 
 -- Disable transparency for a specific window
 hl.window_rule({ match = { class = "^kitty" }, opacity = "1.0 override 1.0 override" })
+hl.window_rule({ match = { class = "^foot" }, opacity = "1.0 override 1.0 override" })
 hl.window_rule({ match = { class = "^zen" }, opacity = "1.0 override 1.0 override" })
 hl.window_rule({ match = { class = "^.*Foliate" }, opacity = "1.0 override 1.0 override" })
 hl.window_rule({ match = { class = "^helium" }, opacity = "1.0 override 1.0 override" })
+hl.window_rule({ match = { class = "^org.pwmt.zathura" }, opacity = "1.0 override 1.0 override" })
 -- hl.window_rule({ match = { class = "^obsidian" }, opacity = "1.0 override 1.0 override" })
 
 -- Uncomment to apply global transparency to all windows:
@@ -31,8 +33,8 @@ hl.window_rule({ match = { class = ".*" }, no_blur = false })
 
 -- Picture-in-Picture: force opaque and keep blur off
 hl.window_rule({
-	match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-	opacity = "1.0 override 1.0 override",
+    match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+    opacity = "1.0 override 1.0 override",
 })
 hl.window_rule({ match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" }, no_blur = false })
 hl.window_rule({ match = { title = "^(.*)$" }, no_blur = false })
@@ -57,68 +59,68 @@ hl.window_rule({ match = { title = ".*Welcome" }, float = true })
 hl.window_rule({ match = { title = "^(illogical-impulse Settings)$" }, float = true })
 hl.window_rule({ match = { title = ".*Shell conflicts.*" }, float = true })
 hl.window_rule({
-	match = { title = "^(Choose wallpaper)(.*)$" },
-	center = true,
-	float = true,
-	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+    match = { title = "^(Choose wallpaper)(.*)$" },
+    center = true,
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
 hl.window_rule({
-	match = { class = "^(org\\.kde\\.dolphin)$" },
-	center = true,
-	float = true,
-	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+    match = { class = "^(org\\.kde\\.dolphin)$" },
+    center = true,
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
 hl.window_rule({
-	match = {
-      class = "^(kitty)$",
-      title = "^(Yazi*)$",
-   },
-	center = true,
-	float = true,
-	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+    match = {
+        class = "^(kitty)$",
+        title = "^(Yazi*)$",
+    },
+    center = true,
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
 hl.window_rule({
-	match = { class = "^(pavucontrol)$" },
-	float = true,
-	center = true,
-	size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
+    match = { class = "^(pavucontrol)$" },
+    float = true,
+    center = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
 })
 hl.window_rule({
-	match = { class = "^(org.pulseaudio.pavucontrol)$" },
-	float = true,
-	center = true,
-	size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
+    match = { class = "^(org.pulseaudio.pavucontrol)$" },
+    float = true,
+    center = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
 })
 hl.window_rule({
-	match = { class = "^(nm-connection-editor)$" },
-	float = true,
-	center = true,
-	size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
+    match = { class = "^(nm-connection-editor)$" },
+    float = true,
+    center = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
 })
 hl.window_rule({
-	match = { class = "org.freedesktop.impl.portal.desktop.kde" },
-	float = true,
-	size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+    match = { class = "org.freedesktop.impl.portal.desktop.kde" },
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
 hl.window_rule({
-	match = { class = "^(Zotero)$" },
-	float = true,
-	size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
+    match = { class = "^(Zotero)$" },
+    float = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.45)" },
 })
 hl.window_rule({
-	match = { class = "^(.*Foliate)$" },
-	float = true,
-	size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+    match = { class = "^(.*Foliate)$" },
+    float = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
 })
 
 -- ######## Move ########
 -- kde-material-you-colors spawns a window when changing dark/light theme.
 -- This is to make sure it doesn't interfere at all.
 hl.window_rule({
-	match = { class = "^(plasma-changeicons)$" },
-	float = true,
-	no_initial_focus = true,
-	move = { 999999, 999999 },
+    match = { class = "^(plasma-changeicons)$" },
+    float = true,
+    no_initial_focus = true,
+    move = { 999999, 999999 },
 })
 
 -- stupid dolphin copy
@@ -129,12 +131,12 @@ hl.window_rule({ match = { class = "^dev\\.warp\\.Warp$" }, tile = true })
 
 -- ######## Picture-in-Picture ########
 hl.window_rule({
-	match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-	float = true,
-	keep_aspect_ratio = true,
-	move = { "(monitor_w*0.73)", "(monitor_h*0.72)" },
-	size = { "(monitor_w*0.25)", "(monitor_h*0.25)" },
-	pin = true,
+    match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+    float = true,
+    keep_aspect_ratio = true,
+    move = { "(monitor_w*0.73)", "(monitor_h*0.72)" },
+    size = { "(monitor_w*0.25)", "(monitor_h*0.25)" },
+    pin = true,
 })
 
 -- ######## Tearing ########
@@ -144,8 +146,8 @@ hl.window_rule({ match = { class = "^(steam_app).*" }, immediate = true })
 
 -- Fix Jetbrains IDEs focus/rerendering problem
 hl.window_rule({
-	match = { class = "^jetbrains-.*$", float = true, title = "^$|^\\s$|^win\\d+$" },
-	no_initial_focus = true,
+    match = { class = "^jetbrains-.*$", float = true, title = "^$|^\\s$|^win\\d+$" },
+    no_initial_focus = true,
 })
 
 -- No shadow for tiled windows
@@ -187,11 +189,11 @@ hl.layer_rule({ match = { namespace = "osk[0-9]*" }, blur = true, ignore_alpha =
 
 -- Quickshell: illogical-impulse
 hl.layer_rule({
-	match = { namespace = "quickshell:.*" },
-	blur_popups = true,
-	blur = true,
-	xray = false,
-	ignore_alpha = 0.2,
+    match = { namespace = "quickshell:.*" },
+    blur_popups = true,
+    blur = true,
+    xray = false,
+    ignore_alpha = 0.2,
 })
 hl.layer_rule({ match = { namespace = "quickshell:bar" }, animation = "slide" })
 hl.layer_rule({ match = { namespace = "quickshell:actionCenter" }, no_anim = true })

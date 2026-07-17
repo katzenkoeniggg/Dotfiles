@@ -12,7 +12,7 @@ hl.env("XCURSOR_SIZE", "24")
 -- hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- hl.env("QT_QPA_PLATFORMTHEME_QT6", "qt6ct")
 
-hl.env("TERMINAL", "kitty -1")
+-- hl.env("TERMINAL", "kitty -1")
 
 -- ######## Input method ########
 -- See https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland

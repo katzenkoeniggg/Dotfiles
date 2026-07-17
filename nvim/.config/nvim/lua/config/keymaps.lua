@@ -14,22 +14,24 @@ map("n", "Q", "<nop>")
 -- Ctrl+C as Escape in insert mode
 -- map("i", "<C-c>", "<Esc>")
 
-map("v", "J", ":m '>+1<cr>gv=gv")         -- move selection down
-map("v", "K", ":m '<-2<cr>gv=gv")         -- move selection up
+map("v", "J", ":m '>+1<cr>gv=gv") -- move selection down
+map("v", "K", ":m '<-2<cr>gv=gv") -- move selection up
 
-map("n", "<C-d>", "<C-d>zz")              -- scroll down, stay centered
-map("n", "<C-u>", "<C-u>zz")              -- scroll up, stay centered
-map("n", "n", "nzzzv")                    -- next search result, centered
-map("n", "N", "Nzzzv")                    -- prev search result, centered
-map("n", "J", "mzJ`z")                    -- join lines without moving cursor
+map("n", "<C-d>", "<C-d>zz") -- scroll down, stay centered
+map("n", "<C-u>", "<C-u>zz") -- scroll up, stay centered
+map("n", "n", "nzzzv") -- next search result, centered
+map("n", "N", "Nzzzv") -- prev search result, centered
+map("n", "J", "mzJ`z") -- join lines without moving cursor
 
-map("x", "<leader>p", [["_dP]])           -- paste over selection WITHOUT losing clipboard (greatest remap ever)
-map({ "n", "v" }, "<leader>y", [["+y]])   -- yank to system clipboard
-map("n", "<leader>Y", [["+Y]])            -- yank to system clipboard
-map({ "n", "v" }, "<leader>d", [["_d]])   -- delete to void register (doesn't overwrite clipboard)
+map({ "n", "v" }, "<leader>y", [["+y]]) -- yank to system clipboard
+map("n", "<leader>Y", [["+Y]]) -- yank to system clipboard
+map({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+map({ "n", "v" }, "<leader>P", [["+P]], { desc = "Paste before from system clipboard" })
+map("x", "P", [["_dP]]) -- paste over selection WITHOUT losing clipboard (greatest remap ever)
+map({ "n", "v" }, "<leader>d", [["_d]]) -- delete to void register (doesn't overwrite clipboard)
 
-map("n", "<C-k>", "<cmd>cnext<cr>zz")     -- next quickfix item
-map("n", "<C-j>", "<cmd>cprev<cr>zz")     -- prev quickfix item
+map("n", "<C-k>", "<cmd>cnext<cr>zz") -- next quickfix item
+map("n", "<C-j>", "<cmd>cprev<cr>zz") -- prev quickfix item
 map("n", "<leader>k", "<cmd>lnext<cr>zz") -- next location list
 map("n", "<leader>j", "<cmd>lprev<cr>zz") -- prev location list
 

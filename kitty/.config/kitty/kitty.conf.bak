@@ -1,9 +1,9 @@
 # Font
-font_family      JetBrainsMono Nerd Font Mono
-font_size 14.0
+# font_family      JetBrainsMono Nerd Font
+font_size 13.0
 
 # Padding (why weird value? consistency with foot)
-window_margin_width 15
+window_margin_width 10
 
 hide_window_decorations yes
 
@@ -40,6 +40,8 @@ map ctrl+kp_0 change_font_size all 0
 
 # Shell integration
 shell_integration no-cursor
+
+#include colors.conf
 
 # Cursor Configuration
 cursor_shape block
