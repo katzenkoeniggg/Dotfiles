@@ -10,9 +10,9 @@ hl.config({
         gaps_out = 10,
         gaps_workspaces = 50,
 
-        border_size = 2,
+        border_size = 3,
         col = {
-            active_border = "rgba(62666cee)",
+            active_border = "rgba(62666caa)",
             inactive_border = "rgba(191919aa)",
         },
 
@@ -53,15 +53,15 @@ hl.config({
             special = false,
             ignore_opacity = true,
             new_optimizations = true,
-            size = 2,
-            passes = 6,
+            size = 11,
+            passes = 3,
             brightness = 1,
             noise = 0.05,
             contrast = 1,
             vibrancy = 0.1696,
             vibrancy_darkness = 0.67,
             popups = true,
-            popups_ignorealpha = 0.6,
+            popups_ignorealpha = 0.2,
             input_methods = true,
             input_methods_ignorealpha = 0.8,
         },
@@ -154,17 +154,17 @@ hl.animation({
     style = "popin 80%",
 })
 hl.animation({
-    leaf = "fadeIn",
-    enabled = true,
-    speed = 3,
-    bezier = "emphasizedDecel",
-})
-hl.animation({
     leaf = "windowsOut",
     enabled = true,
     speed = 2,
     bezier = "emphasizedDecel",
     style = "popin 90%",
+})
+hl.animation({
+    leaf = "fadeIn",
+    enabled = true,
+    speed = 3,
+    bezier = "emphasizedDecel",
 })
 hl.animation({
     leaf = "fadeOut",

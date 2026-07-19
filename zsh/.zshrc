@@ -187,7 +187,7 @@ export PATH=$PATH:/home/katzenkoenig/.spicetify
 ################################################################################
 # Aliases
 ################################################################################
-alias speed="speedtest-cli"
+alias speed="speedtest --bytes"
 alias pak="flatpak"
 alias pakin="flatpak install"
 alias pakup="flatpak update"
@@ -200,6 +200,7 @@ alias lx="eza -1la --color=always --icons=always --group-directories-first --git
 alias dload="aria2c -x 8 -s 8 -j 2 -c -d ~/Downloads"
 alias ff="fastfetch"
 alias yz="yazi"
+alias cd="z"
 
 ################################################################################
 # Load Powerlevel10k Configuration (Prompt Customization)

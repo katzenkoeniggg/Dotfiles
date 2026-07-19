@@ -20,10 +20,8 @@ hl.window_rule({ match = { class = "^org.pwmt.zathura" }, opacity = "1.0 overrid
 -- hl.window_rule({ match = { xwayland = true }, no_blur = true })
 
 -- Stay Awake
-hl.window_rule({ match = { class = "^(.*)$" }, idle_inhibit = "fullscreen" })
-hl.window_rule({ match = { title = "^(.*)$" }, idle_inhibit = "fullscreen" })
-hl.window_rule({ match = { content = 2 }, idle_inhibit = "focus" })
-hl.window_rule({ match = { content = 3 }, idle_inhibit = "focus" })
+hl.window_rule({ match = { class = "^(.*)$", title = "^(.*)$" }, idle_inhibit = "fullscreen" })
+-- hl.window_rule({ match = { title = "^(.*Youtube.*)" }, idle_inhibit = "focus" })
 
 -- Disable blur for xwayland context menus
 hl.window_rule({ match = { class = "^()$", title = "^()$" }, no_blur = false })
@@ -168,7 +166,7 @@ hl.layer_rule({ match = { namespace = "osk" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "hyprpicker" }, no_anim = true })
 
 hl.layer_rule({ match = { namespace = "noanim" }, no_anim = true })
-hl.layer_rule({ match = { namespace = "gtk-layer-shell" }, blur = true, ignore_alpha = 0 })
+hl.layer_rule({ match = { namespace = "gtk-layer-shell" }, blur = true, ignore_alpha = 0.2 })
 hl.layer_rule({ match = { namespace = "launcher" }, blur = true, ignore_alpha = 0.5 })
 hl.layer_rule({ match = { namespace = "notifications" }, blur = true, ignore_alpha = 0.69 })
 hl.layer_rule({ match = { namespace = "logout_dialog" }, blur = true }) -- wlogout
