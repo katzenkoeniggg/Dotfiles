@@ -5,12 +5,16 @@
 -- ######## Window rules ########
 
 -- Disable transparency for a specific window
-hl.window_rule({ match = { class = "^kitty" }, opacity = "1.0 override 1.0 override" })
-hl.window_rule({ match = { class = "^foot" }, opacity = "1.0 override 1.0 override" })
-hl.window_rule({ match = { class = "^zen" }, opacity = "1.0 override 1.0 override" })
-hl.window_rule({ match = { class = "^.*Foliate" }, opacity = "1.0 override 1.0 override" })
-hl.window_rule({ match = { class = "^helium" }, opacity = "1.0 override 1.0 override" })
-hl.window_rule({ match = { class = "^org.pwmt.zathura" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^kitty" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^foot" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^zen" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*Foliate" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^helium" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*zathura" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*Flatseal" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*g4music" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*Stremio" }, opacity = "1.0 override 1.0 override" })
+-- hl.window_rule({ match = { class = "^.*DiskUtility" }, opacity = "1.0 override 1.0 override" })
 -- hl.window_rule({ match = { class = "^obsidian" }, opacity = "1.0 override 1.0 override" })
 
 -- Uncomment to apply global transparency to all windows:

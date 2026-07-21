@@ -201,6 +201,8 @@ alias dload="aria2c -x 8 -s 8 -j 2 -c -d ~/Downloads"
 alias ff="fastfetch"
 alias yz="yazi"
 alias cd="z"
+alias cl="clear"
+alias vpn="protonvpn"
 
 ################################################################################
 # Load Powerlevel10k Configuration (Prompt Customization)

@@ -55,13 +55,13 @@ return {
         -- vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
         -- treesitter-based indentation (provided by the plugin, marked experimental)
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = "*",
-            callback = function()
-                pcall(function()
-                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-                end)
-            end,
-        })
+        -- vim.api.nvim_create_autocmd("FileType", {
+        --     pattern = "*",
+        --     callback = function()
+        --         pcall(function()
+        --             vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        --         end)
+        --     end,
+        -- })
     end,
 }

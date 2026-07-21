@@ -1,9 +1,3 @@
--- General config
--- https://wiki.hypr.land/Configuring/Basics/Variables/
-
--- monitor=,addreserved, 0, 0, 0, 0  -- Custom reserved area
--- HDMI port: mirror display. To see device name, use `hyprctl monitors`
-
 hl.config({
     general = {
         gaps_in = 5,
@@ -44,11 +38,11 @@ hl.config({
         -- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
         rounding = 12,
         rounding_power = 4,
-        active_opacity = 0.85,
-        inactive_opacity = 0.85,
+        -- active_opacity = 0.85,
+        -- inactive_opacity = 0.85,
 
         blur = {
-            enabled = true,
+            enabled = false,
             xray = false,
             special = false,
             ignore_opacity = true,
@@ -68,7 +62,7 @@ hl.config({
 
         shadow = {
             enabled = true,
-            range = 8,
+            range = 20,
             render_power = 3,
             sharp = false,
             offset = { 0, 0 },
@@ -85,8 +79,8 @@ hl.config({
         kb_layout = "us",
         kb_options = "caps:swapescape",
         numlock_by_default = true,
-        repeat_delay = 300,
-        repeat_rate = 25,
+        repeat_delay = 250,
+        repeat_rate = 35,
 
         follow_mouse = 1,
         sensitivity = 0.5,
@@ -102,10 +96,19 @@ hl.config({
         },
     },
 
+    gestures = {
+        workspace_swipe_distance = 700,
+        workspace_swipe_cancel_ratio = 0.2,
+        workspace_swipe_min_speed_to_force = 5,
+        workspace_swipe_direction_lock = true,
+        workspace_swipe_direction_lock_threshold = 10,
+        workspace_swipe_create_new = true,
+    },
+
     misc = {
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
-        vrr = 1,
+        vrr = 0,
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
         animate_manual_resizes = false,
@@ -127,6 +130,7 @@ hl.config({
     cursor = {
         zoom_factor = 1,
         zoom_rigid = false,
+        zoom_disable_aa = true,
         hotspot_padding = 1,
     },
 })
