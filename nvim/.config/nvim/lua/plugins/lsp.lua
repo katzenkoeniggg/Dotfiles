@@ -134,13 +134,14 @@ return {
         opts = {
             ensure_installed = {
                 "lua_ls",
-                "pyrefly",
+                "ruff",
+                -- "pyrefly",
                 "ts_ls",
                 "html",
                 "cssls",
                 "tailwindcss",
                 "marksman",
-                "copilot",
+                -- "copilot",
                 "jsonls",
                 "bashls",
             },
@@ -156,7 +157,6 @@ return {
         opts = {
             ensure_installed = {
                 "stylua",
-                "ruff",
                 "prettier",
                 "prettierd",
                 "eslint_d",

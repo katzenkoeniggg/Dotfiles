@@ -4,9 +4,9 @@ hl.config({
         gaps_out = 10,
         gaps_workspaces = 50,
 
-        border_size = 3,
+        border_size = 2,
         col = {
-            active_border = "rgba(62666caa)",
+            active_border = "rgba(62666cee)",
             inactive_border = "rgba(191919aa)",
         },
 
@@ -62,7 +62,7 @@ hl.config({
 
         shadow = {
             enabled = true,
-            range = 20,
+            range = 14,
             render_power = 3,
             sharp = false,
             offset = { 0, 0 },
