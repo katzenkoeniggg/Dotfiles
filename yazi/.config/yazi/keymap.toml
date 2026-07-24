@@ -1,12 +1,18 @@
 # Go to HDD
 [[mgr.prepend_keymap]]
-on = ["g","e"]
+on = ["g", "e"]
 run = "cd /run/media/katzenkoenig/Data"
 desc = "Go to HDD"
 
+# Go to Projects
+[[mgr.prepend_keymap]]
+on = ["g", "p"]
+run = "cd ~/Projects/"
+desc = "Go to Projects"
+
 # Close and Restore Tabs
 [[mgr.prepend_keymap]]
-on = [ "<C-t>" ]
+on = ["<C-t>"]
 run = "plugin close-and-restore-tab restore"
 desc = "Restore the previously closed tab"
 
@@ -18,12 +24,12 @@ desc = "Restore the previously closed tab"
 
 # Recycle Bin
 [[mgr.prepend_keymap]]
-on = ["R","b"]
+on = ["R", "b"]
 run = "plugin recycle-bin"
 desc = "Open Recycle Bin menu"
 
 # Easyjump
 [[mgr.prepend_keymap]]
-on   = [ "i" ]
-run  = "plugin easyjump"
+on = ["i"]
+run = "plugin easyjump"
 desc = "easyjump"
