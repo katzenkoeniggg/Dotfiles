@@ -20,6 +20,7 @@ return {
             "javascript",
             "jsdoc",
             "json",
+            "kitty",
             "lua",
             "luadoc",
             "luap",

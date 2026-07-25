@@ -1,8 +1,8 @@
 # Go to HDD
 [[mgr.prepend_keymap]]
 on = ["g", "e"]
-run = "cd /run/media/katzenkoenig/Data"
-desc = "Go to HDD"
+run = "cd /run/media/$USER/"
+desc = "Go to External Drive"
 
 # Go to Projects
 [[mgr.prepend_keymap]]
