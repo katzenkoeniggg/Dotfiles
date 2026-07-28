@@ -79,8 +79,42 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase width" }
 --- Lazy
 map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Lazy UI" })
 
--- Neo-tree
-map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neo-tree" })
-map("n", "<leader>o", "<cmd>Neotree focus<cr>", { desc = "Focus Neo-tree" })
-map("n", "<leader>be", "<cmd>Neotree buffers toggle<cr>", { desc = "Buffer explorer" })
-map("n", "<leader>ge", "<cmd>Neotree git_status toggle<cr>", { desc = "Git explorer" })
+--- Fzf
+-- Files
+map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files" })
+map("n", "<leader>fe", "<cmd>FzfLua files cwd=~<cr>", { desc = "Find files at Home" })
+map("n", "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { desc = "Recent files" })
+
+-- Search
+map("n", "<leader>lg", "<cmd>FzfLua live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>gr", "<cmd>FzfLua live_grep_native<cr>", { desc = "Live grep native" })
+map("n", "<leader>fw", "<cmd>FzfLua grep_cword<cr>", { desc = "Grep word under cursor" })
+map("n", "<leader>fW", "<cmd>FzfLua grep_cWORD<cr>", { desc = "Find current Word" })
+
+-- Buffers
+map("n", "<leader>fl", "<cmd>FzfLua buffers<cr>", { desc = "Buffers" })
+map("n", "<leader>fL", "<cmd>FzfLua lines<cr>", { desc = "Lines in all buffers" })
+
+-- LSP
+map("n", "<leader>fd", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Document diagnostics" })
+map("n", "<leader>fD", "<cmd>FzfLua diagnostics_workspace<cr>", { desc = "Workspace diagnostics" })
+map("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Document symbols" })
+map("n", "<leader>fS", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Workspace symbols" })
+map("n", "<leader>fgr", "<cmd>FzfLua lsp_references<cr>", { desc = "LSP references" })
+map("n", "<leader>fgw", "<cmd>FzfLua lsp_finder<cr>", { desc = "LSP finder (all)" })
+
+-- Git
+map("n", "<leader>gc", "<cmd>FzfLua git_commits<cr>", { desc = "Git commits" })
+map("n", "<leader>gb", "<cmd>FzfLua git_branches<cr>", { desc = "Git branches" })
+map("n", "<leader>gs", "<cmd>FzfLua git_status<cr>", { desc = "Git status" })
+
+-- Misc
+map("n", "<leader>fk", "<cmd>FzfLua keymaps<cr>", { desc = "Keymaps" })
+map("n", "<leader>fq", "<cmd>FzfLua quickfix<cr>", { desc = "Quickfix list" })
+map("n", "<leader>f/", "<cmd>FzfLua search_history<cr>", { desc = "Search history" })
+map("n", "<leader>fc", "<cmd>FzfLua command_history<cr>", { desc = "Command history" })
+map("n", "<leader>fu", "<cmd>FzfLua undotree locate=false<cr>", { desc = "Undotree" })
+map("n", "<leader>fh", "<cmd>FzfLua helptags<cr>", { desc = "Find help" })
+map("n", "<leader>fb", "<cmd>FzfLua builtin<cr>", { desc = "Find builtin" })
+map("n", "<leader>fp", "<cmd>FzfLua profiles<cr>", { desc = "Find profiles" })
+map("n", "<leader>cs", "<cmd>FzfLua colorschemes<cr>", { desc = "Change colorschemes" })

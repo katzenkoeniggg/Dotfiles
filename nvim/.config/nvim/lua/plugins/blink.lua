@@ -1,16 +1,17 @@
 return {
     {
         "saghen/blink.compat",
-        version = "*",
+        version = "2.*",
         lazy = true,
         opts = {},
     },
     {
         "saghen/blink.cmp",
         version = "1.*",
+        event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             { "L3MON4D3/LuaSnip", version = "v2.*" },
-            { "folke/lazydev.nvim", opts = {} },
+            "folke/lazydev.nvim",
             "rafamadriz/friendly-snippets",
             "onsails/lspkind.nvim",
             "barrettruth/blink-cmp-tmux",

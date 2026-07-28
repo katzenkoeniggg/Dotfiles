@@ -128,6 +128,14 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
+-- 6. Lid Switch
+-- Trigger when the switch is toggled.
+-- hl.bind("switch:Lid Switch", hl.dsp.exec_cmd(ipc .. "session lock"), { locked = true })
+-- Trigger when the switch is turning on.
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd(ipc .. "session lock-and-suspend"), { locked = true })
+-- Trigger when the switch is turning off.
+hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd(ipc .. "dpms-on"), { locked = true })
+
 -- Laptop multimedia keys for volume and LCD brightness
 -- hl.bind(
 --     "XF86AudioRaiseVolume",

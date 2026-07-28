@@ -1,8 +1,21 @@
 return {
     "stevearc/conform.nvim",
-    dependencies = { "mason.nvim" },
-    lazy = true,
+    event = { "BufWritePre" },
     cmd = "ConformInfo",
+    keys = {
+        {
+            "<leader>fm",
+            function()
+                require("conform").format({
+                    lsp_format = "fallback",
+                    async = false,
+                    timeout_ms = 1000,
+                })
+            end,
+            mode = "",
+            desc = "Format buffer",
+        },
+    },
 
     -- This will provide type hinting with LuaLS
     ---@module "conform"
@@ -52,21 +65,6 @@ return {
                     "4",
                 },
             },
-        },
-    },
-
-    keys = {
-        {
-            "<leader>fm",
-            function()
-                require("conform").format({
-                    lsp_format = "fallback",
-                    async = false,
-                    timeout_ms = 1000,
-                })
-            end,
-            mode = "",
-            desc = "Format buffer",
         },
     },
 }

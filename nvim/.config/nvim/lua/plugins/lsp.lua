@@ -7,7 +7,6 @@ return {
         },
         dependencies = {
             "saghen/blink.cmp",
-            "stevearc/conform.nvim",
             "mason-org/mason.nvim",
             "mason-org/mason-lspconfig.nvim",
             "L3MON4D3/LuaSnip",
@@ -113,6 +112,7 @@ return {
     },
     {
         "mason-org/mason.nvim",
+        cmd = "Mason",
         opts = {
             ui = {
                 border = "rounded",
@@ -172,7 +172,7 @@ return {
         opts = {
             library = {
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-                { path = "nvim-lspconfig", words = { "lspconfig.settings" } },
+                { path = "nvim-lspconfig",     words = { "lspconfig.settings" } },
             },
         },
     },

@@ -83,13 +83,6 @@ return {
         },
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = true, -- make sure we load this during startup if it is your main colorscheme
-        opts = {
-            transparent = true,
-        },
-    },
-    {
         "AvengeMedia/base46",
         lazy = true,
         opts = {
@@ -106,6 +99,9 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
+        opts = {
+            transparent = true,
+        },
         config = function()
             local ok, lines = pcall(vim.fn.readfile, vim.fn.stdpath("data") .. "/last_colorscheme")
             vim.cmd.colorscheme(ok and lines[1] or "tokyonight")
