@@ -105,6 +105,12 @@ return {
         config = function()
             local ok, lines = pcall(vim.fn.readfile, vim.fn.stdpath("data") .. "/last_colorscheme")
             vim.cmd.colorscheme(ok and lines[1] or "tokyonight")
+
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                callback = function(args)
+                    vim.fn.writefile({ args.match }, vim.fn.stdpath("data") .. "/last_colorscheme")
+                end,
+            })
         end,
     },
 }

@@ -1,6 +1,6 @@
 -- ######## Window rules ########
 
--- Disable transparency for a specific window
+-- Disable transparency
 -- hl.window_rule({ match = { class = "^kitty" }, opacity = "1.0 override 1.0 override" })
 -- hl.window_rule({ match = { class = "^foot" }, opacity = "1.0 override 1.0 override" })
 -- hl.window_rule({ match = { class = "^zen" }, opacity = "1.0 override 1.0 override" })
@@ -47,7 +47,6 @@ hl.window_rule({ match = { class = ".*plasmawindowed.*" }, float = true })
 hl.window_rule({ match = { class = "kcm_.*" }, float = true })
 hl.window_rule({ match = { class = ".*bluedevilwizard" }, float = true })
 hl.window_rule({ match = { title = ".*Welcome" }, float = true })
-hl.window_rule({ match = { title = "^(illogical-impulse Settings)$" }, float = true })
 hl.window_rule({ match = { title = ".*Shell conflicts.*" }, float = true })
 hl.window_rule({
     match = { title = "^(Choose wallpaper)(.*)$" },
@@ -57,6 +56,12 @@ hl.window_rule({
 })
 hl.window_rule({
     match = { class = "^(org\\.kde\\.dolphin)$" },
+    center = true,
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+})
+hl.window_rule({
+    match = { class = "^(org\\.gnome\\.Nautilus)$" },
     center = true,
     float = true,
     size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
@@ -184,7 +189,7 @@ hl.window_rule({
 })
 
 -- No shadow for tiled windows
-hl.window_rule({ match = { float = false }, no_shadow = false })
+-- hl.window_rule({ match = { float = false }, no_shadow = true })
 
 -- ######## Workspace rules ########
 hl.workspace_rule({ workspace = "special:special", gaps_out = 30 })

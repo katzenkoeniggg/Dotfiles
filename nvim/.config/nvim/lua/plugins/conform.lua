@@ -40,10 +40,10 @@ return {
             sh = { "shfmt" },
         },
 
-        format_on_save = {
-            lsp_format = "fallback",
-            timeout_ms = 500,
-        },
+        -- format_on_save = {
+        --     lsp_format = "fallback",
+        --     timeout_ms = 500,
+        -- },
 
         formatters = {
             injected = { options = { ignore_errors = true } },

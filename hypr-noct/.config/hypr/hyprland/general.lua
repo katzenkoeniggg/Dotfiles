@@ -15,7 +15,7 @@ hl.config({
 
         resize_on_border = true,
         no_focus_fallback = true,
-        allow_tearing = false, -- This just allows the `immediate` window rule to work
+        allow_tearing = false,
 
         snap = {
             enabled = true,
@@ -37,15 +37,13 @@ hl.config({
     },
 
     decoration = {
-        -- 2 = circle, higher = squircle, 4 = very obvious squircle
-        -- Clear squircles look really off; we use only extra .4 here to make the rounding feel more continuous
         rounding = 12,
         rounding_power = 4,
         -- active_opacity = 0.85,
         -- inactive_opacity = 0.85,
 
         blur = {
-            enabled = true,
+            enabled = false,
             xray = false,
             special = false,
             ignore_opacity = true,
@@ -65,7 +63,7 @@ hl.config({
 
         shadow = {
             enabled = true,
-            range = 14,
+            range = 7,
             render_power = 3,
             sharp = false,
             offset = { 0, 0 },

@@ -1,6 +1,5 @@
 return {
     "katzenkoeniggg/statusline.lua",
-    event = "VeryLazy",
     dependencies = {
         "nvim-lua/lsp-status.nvim",
     },

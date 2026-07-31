@@ -1,5 +1,5 @@
 terminal =
-    "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'foot' 'kitty -1' 'alacritty' 'wezterm' 'konsole' 'kgx' 'uxterm' 'xterm'"
+    "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'kitty -1' 'foot' 'alacritty' 'wezterm' 'konsole' 'kgx' 'uxterm' 'xterm'"
 fileManager =
     "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'kitty -1 -T Yazi zsh -c yazi' 'nautilus' 'nemo' 'thunar' 'dolphin'"
 browser =

@@ -7,9 +7,9 @@ return {
         },
         dependencies = {
             "saghen/blink.cmp",
-            "mason-org/mason.nvim",
             "mason-org/mason-lspconfig.nvim",
-            "L3MON4D3/LuaSnip",
+            -- "mason-org/mason.nvim",
+            -- "L3MON4D3/LuaSnip",
             "j-hui/fidget.nvim",
         },
 
@@ -112,7 +112,6 @@ return {
     },
     {
         "mason-org/mason.nvim",
-        cmd = "Mason",
         opts = {
             ui = {
                 border = "rounded",
@@ -145,7 +144,6 @@ return {
                 "jsonls",
                 "bashls",
             },
-            automatic_enable = true,
         },
     },
     {
@@ -172,7 +170,7 @@ return {
         opts = {
             library = {
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-                { path = "nvim-lspconfig",     words = { "lspconfig.settings" } },
+                { path = "nvim-lspconfig", words = { "lspconfig.settings" } },
             },
         },
     },
