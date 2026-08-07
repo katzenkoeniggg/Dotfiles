@@ -8,4 +8,7 @@ require("vim._core.ui2").enable({
       cmd = { height = 0.5 },
    },
 })
+require("config.keymaps")
 require("config.lazy")
+require("config.autocmd")
+require("config.options")

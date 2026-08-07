@@ -8,8 +8,11 @@ hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
--- hl.env("QT_QPA_PLATFORMTHEME_QT6", "qt6ct")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- ######## Editor ########
 hl.env("EDITOR", "nvim")

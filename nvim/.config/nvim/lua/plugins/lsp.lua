@@ -7,10 +7,10 @@ return {
         },
         dependencies = {
             "saghen/blink.cmp",
-            "mason-org/mason-lspconfig.nvim",
+            -- "mason-org/mason-lspconfig.nvim",
             -- "mason-org/mason.nvim",
             -- "L3MON4D3/LuaSnip",
-            "j-hui/fidget.nvim",
+            -- "j-hui/fidget.nvim",
         },
 
         config = function()

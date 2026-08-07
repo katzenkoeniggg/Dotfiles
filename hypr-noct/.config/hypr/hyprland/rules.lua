@@ -1,5 +1,15 @@
 -- ######## Window rules ########
 
+-- ######## Suppres Maximize ########
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+suppressMaximizeRule:set_enabled(true)
+
 -- Disable transparency
 -- hl.window_rule({ match = { class = "^kitty" }, opacity = "1.0 override 1.0 override" })
 -- hl.window_rule({ match = { class = "^foot" }, opacity = "1.0 override 1.0 override" })
@@ -107,6 +117,21 @@ hl.window_rule({
     match = { class = "^(.*Foliate)$" },
     float = true,
     size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+})
+hl.window_rule({
+    match = { class = "^(io\\.ente\\.auth)$" },
+    float = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+})
+hl.window_rule({
+    match = { class = "^(.*Pass)$" },
+    float = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+})
+hl.window_rule({
+    match = { class = "^(net\\.davidotek\\.pupgui2)$" },
+    float = true,
+    size = { "(monitor_w*0.35)", "(monitor_h*0.55)" },
 })
 
 -- Noctalia Settings

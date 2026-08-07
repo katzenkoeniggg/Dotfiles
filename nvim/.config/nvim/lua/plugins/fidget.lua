@@ -1,6 +1,6 @@
 return {
     "j-hui/fidget.nvim",
-    event = "VeryLazy",
+    event = "LspAttach",
     opts = {
         notification = {
             override_vim_notify = true,

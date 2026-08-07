@@ -94,6 +94,24 @@ return {
             transparency = true,
         },
     },
+    {
+        "Aejkatappaja/cendre",
+        lazy = true,
+        config = function()
+            require("cendre").setup({
+                background = "hard", -- "hard" | "medium" | "soft"
+                transparent = true,
+                italic = false,
+            })
+        end,
+    },
+    {
+        "Aejkatappaja/sora",
+        lazy = true,
+        opts = {
+            transparent = true,
+        },
+    },
 
     {
         "folke/tokyonight.nvim",

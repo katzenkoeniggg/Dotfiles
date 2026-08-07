@@ -114,6 +114,11 @@ hl.window_rule({
     float = true,
     size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
 })
+hl.window_rule({
+    match = { class = "^(net\\.davidotek\\.pupgui2)$" },
+    float = true,
+    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+})
 
 -- ######## Move ########
 -- kde-material-you-colors spawns a window when changing dark/light theme.

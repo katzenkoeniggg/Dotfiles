@@ -9,13 +9,14 @@ hl.config({
 
         border_size = 2,
         col = {
-            active_border = "rgba(62666cee)",
-            inactive_border = "rgba(191919aa)",
+            active_border = "#494b50",
+            inactive_border = "#191919",
         },
 
         resize_on_border = true,
         no_focus_fallback = true,
         allow_tearing = false,
+        locale = "en_US",
 
         snap = {
             enabled = true,
@@ -23,17 +24,6 @@ hl.config({
             monitor_gap = 5,
             respect_gaps = true,
         },
-    },
-
-    xwayland = {
-        force_zero_scaling = true,
-    },
-
-    dwindle = {
-        preserve_split = true,
-        smart_split = false,
-        smart_resizing = false,
-        -- precise_mouse_move = true,
     },
 
     decoration = {
@@ -63,11 +53,11 @@ hl.config({
 
         shadow = {
             enabled = true,
-            range = 7,
+            range = 8,
             render_power = 3,
-            sharp = false,
-            offset = { 0, 0 },
-            color = "rgba(1a1a1aee)",
+            -- sharp = false,
+            -- offset = { 0, 0 },
+            color = "#0a0a0a",
         },
 
         -- Dim
@@ -76,7 +66,15 @@ hl.config({
         dim_special = 0.07,
     },
 
+    dwindle = {
+        preserve_split = true,
+        smart_split = false,
+        smart_resizing = false,
+        -- precise_mouse_move = true,
+    },
+
     input = {
+        kb_model = "asus_laptop",
         kb_layout = "us",
         kb_options = "caps:swapescape",
         numlock_by_default = true,
@@ -128,11 +126,19 @@ hl.config({
         hide_special_on_workspace_change = true,
     },
 
+    xwayland = {
+        force_zero_scaling = true,
+    },
+
     cursor = {
         zoom_factor = 1,
         zoom_rigid = false,
         zoom_disable_aa = true,
         hotspot_padding = 1,
+    },
+
+    animations = {
+        enabled = true,
     },
 })
 

@@ -19,6 +19,7 @@ hl.bind(mainMod .. " + I ", hl.dsp.exec_cmd(ipc .. "caffeine-toggle"), { descrip
 hl.bind(mainMod .. " + P ", hl.dsp.exec_cmd(ipc .. "power-cycle"), { description = "Power Cycle" })
 hl.bind(secondMod .. " + B", hl.dsp.exec_cmd(ipc .. "bar-toggle"), { description = "Bar Toggle" })
 hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"), { description = "Wallpaper Picker" })
+hl.bind(secondMod .. " + CTRL + T", hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/wallhaven:browser"), { description = "Wallhaven Download" })
 hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd(ipc .. "panel-toggle blackbartblues/keymap:panel"), { description = "Keymaps" })
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(ipc .. "plugin oldirtty/color_picker:service all pick"), { description = "Color Picker" })
 hl.bind(secondMod .. " + G", hl.dsp.exec_cmd(ipc .. "panel-toggle oldirtty/color_picker:panel"), { description = "Color Picker Panel" })
@@ -27,17 +28,7 @@ hl.bind(secondMod .. " + Print", hl.dsp.exec_cmd(ipc .. "screenshot-region"), { 
 hl.bind("Print", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen"), { description = "Fullscreen Screenshot" })
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"), { description = "Window Switcher" })
 
--- 2. Apps
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal), { description = "Terminal" })
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "File manager" })
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser), { description = "Browser" })
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(codeEditor), { description = "Code editor" })
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(textEditor), { description = "Text editor" })
-hl.bind(secondMod .. " + CTRL +  V", hl.dsp.exec_cmd(volumeMixer), { description = "Volume mixer" })
-hl.bind(secondMod .. " + CTRL + O", hl.dsp.exec_cmd(officeSoftware), { description = "Office software" })
-hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "Task manager" })
-
--- 3. Windows
+-- 2. Windows
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }), { description = "Focus Left" })
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }), { description = "Focus Right" })
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }), { description = "Focus Up" })
@@ -51,7 +42,7 @@ hl.bind(secondMod .. " + j", hl.dsp.window.move({ direction = "down" }), { descr
 hl.bind(secondMod .. " + V", hl.dsp.window.float({ action = "toggle" }), { description = "Float Window" })
 hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }), { description = "Maximized Fullscreen" })
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }), { description = "Fullscreen Window" })
--- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(secondMod .. " + P", hl.dsp.window.pseudo(), { description = "Pseudo Mode" })
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -59,7 +50,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind(mainMod .. " + Q", hl.dsp.window.close(), { description = "Close Window" })
 
 -- # Resize Mode
-hl.bind(mainMod .. " + R", hl.dsp.submap("resize"))
+hl.bind("ALT + R", hl.dsp.submap("resize"))
 
 -- Start a submap called "resize".
 hl.define_submap("resize", function()
@@ -75,8 +66,18 @@ hl.define_submap("resize", function()
     hl.bind("SHIFT + k", hl.dsp.window.resize({ x = 0, y = -50, relative = true }), { repeating = true })
 
     -- Use `reset` to go back to the global submap
-    hl.bind("escape", hl.dsp.submap("reset"))
+    hl.bind("ESCAPE", hl.dsp.submap("reset"))
 end) -- # [hidden]
+
+-- 3. Apps
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal), { description = "Terminal" })
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "File manager" })
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser), { description = "Browser" })
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(codeEditor), { description = "Code editor" })
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(textEditor), { description = "Text editor" })
+hl.bind(secondMod .. " + CTRL +  V", hl.dsp.exec_cmd(volumeMixer), { description = "Volume mixer" })
+hl.bind(secondMod .. " + CTRL + O", hl.dsp.exec_cmd(officeSoftware), { description = "Office software" })
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "Task manager" })
 
 -- 4. System Control
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { description = "Volume Up" })

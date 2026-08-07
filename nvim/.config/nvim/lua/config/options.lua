@@ -49,4 +49,5 @@ vim.opt.fillchars = {
     eob = " ",
 }
 
+vim.go.loadplugins = false
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
