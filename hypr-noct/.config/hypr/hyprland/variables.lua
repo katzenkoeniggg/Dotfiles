@@ -3,7 +3,7 @@ terminal =
 fileManager =
     "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'kitty -1 -T Yazi zsh -c yazi' 'nautilus' 'nemo' 'thunar' 'dolphin'"
 browser =
-    "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'google-chrome-stable' 'zen-browser' 'firefox' 'brave' 'chromium' 'microsoft-edge-stable' 'opera' 'librewolf'"
+    "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'firefox' 'zen-browser' 'brave' 'google-chrome-stable' 'chromium' 'microsoft-edge-stable' 'opera' 'librewolf'"
 codeEditor =
     "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'command -v nvim && kitty -1 nvim' 'windsurf' 'antigravity' 'code' 'codium' 'cursor' 'zed' 'zedit' 'zeditor' 'kate' 'gnome-text-editor' 'emacs' 'command -v micro && kitty -1 micro'"
 officeSoftware =

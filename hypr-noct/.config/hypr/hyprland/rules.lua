@@ -76,6 +76,12 @@ hl.window_rule({
     float = true,
     size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
 })
+-- hl.window_rule({
+--     match = { class = "^(localsend)$" },
+--     center = true,
+--     float = true,
+--     size = { "(monitor_w*0.60)", "(monitor_h*0.65)" },
+-- })
 hl.window_rule({
     match = {
         class = "^(kitty)$",
@@ -118,16 +124,16 @@ hl.window_rule({
     float = true,
     size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
 })
-hl.window_rule({
-    match = { class = "^(io\\.ente\\.auth)$" },
-    float = true,
-    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
-})
-hl.window_rule({
-    match = { class = "^(.*Pass)$" },
-    float = true,
-    size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
-})
+-- hl.window_rule({
+--     match = { class = "^(io\\.ente\\.auth)$" },
+--     float = true,
+--     size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+-- })
+-- hl.window_rule({
+--     match = { class = "^(.*Pass)$" },
+--     float = true,
+--     size = { "(monitor_w*0.45)", "(monitor_h*0.75)" },
+-- })
 hl.window_rule({
     match = { class = "^(net\\.davidotek\\.pupgui2)$" },
     float = true,
