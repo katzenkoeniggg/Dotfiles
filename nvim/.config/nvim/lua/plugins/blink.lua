@@ -14,7 +14,6 @@ return {
             "folke/lazydev.nvim",
             "rafamadriz/friendly-snippets",
             "onsails/lspkind.nvim",
-            "barrettruth/blink-cmp-tmux",
         },
 
         opts = {
@@ -144,12 +143,8 @@ return {
             },
 
             sources = {
-                default = { "lazydev", "lsp", "path", "snippets", "buffer", "omni", "tmux" },
+                default = { "lazydev", "lsp", "path", "snippets", "buffer", "omni" },
                 providers = {
-                    tmux = {
-                        name = "Tmux",
-                        module = "blink-cmp-tmux",
-                    },
                     buffer = {
                         opts = {
                             get_bufnrs = function()

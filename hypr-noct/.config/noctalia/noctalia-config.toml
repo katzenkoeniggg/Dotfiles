@@ -1,0 +1,341 @@
+[accessibility]
+ui_scale = 1.2000000104308128
+
+[audio]
+enable_overdrive = true
+
+[bar.default]
+border_width = 1.5
+capsule = true
+capsule_padding = 10.0
+capsule_radius = 10
+capsule_thickness = 0.69999998807907104
+center = [ "group:g3", "clock", "notifications", "group:g4" ]
+concave_edge_corners = false
+end = [ "tray", "group:g2", "group:g1", "battery", "session" ]
+font_family = "JetBrainsMono NFP"
+font_weight = 700
+margin_edge = 10
+margin_ends = 170
+padding = 8
+start = [ "launcher", "workspaces", "active_window" ]
+thickness = 40
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "network", "bluetooth", "volume" ]
+    opacity = 1.0
+    padding = 9.0
+    radius = 10.0
+
+    [[bar.default.capsule_group]]
+    accordion = true
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "temp", "ram", "cpu" ]
+    opacity = 1.0
+    padding = 9.0
+    radius = 10.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = false
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "audio_visualizer", "media" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 10.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = false
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "widget", "screenshot", "widget_2", "power_profile" ]
+    opacity = 1.0
+    padding = 9.0
+    radius = 10.0
+
+[battery]
+warning_threshold = 20
+
+[brightness]
+minimum_brightness = 0.0099999997764825821
+
+[idle]
+behavior_order = [ "Backlight Timeout", "lock", "screen-off", "lock-and-suspend", "Suspend Then Hibernate" ]
+pre_action_fade_seconds = 0
+
+    [idle.behavior."Backlight Timeout"]
+    action = "command"
+    command = "brightnessctl -sd asus::kbd_backlight set 0"
+    enabled = true
+    resume_command = "brightnessctl -rd asus::kbd_backlight"
+    timeout = 60.0
+
+    [idle.behavior."Suspend Then Hibernate"]
+    action = "command"
+    command = "systemctl suspend-then-hibernate"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+address = "Bekasi, Indonesia"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 287.5
+    cx = 960.0
+    cy = 711.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.0
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 16.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 314.0
+    box_width = 394.0
+    cx = 960.0
+    cy = 508.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        center_text = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = "Steelfish Outline"
+        shadow = true
+        timezone = ""
+
+[nightlight]
+temperature_night = 3400
+
+[osd]
+offset_y = 20
+scale = 0.80000000447034836
+
+[plugin_settings."blackbartblues/keymap"]
+panel_position = "top_center"
+show_undescribed = false
+
+[plugin_settings."noctalia/wallhaven"]
+browser_placement = "floating"
+
+[plugin_settings."oldirtty/color_picker"]
+hyprpicker-lowercase = true
+panel_position = "top_center"
+
+[plugins]
+enabled = [ "oldirtty/color_picker", "noctalia/wallhaven", "blackbartblues/keymap" ]
+
+[shell]
+avatar_path = "/home/katzenkoenig/Pictures/user.jpg"
+clipboard_auto_paste = "off"
+font_family = "SF Pro Text"
+password_style = "random"
+polkit_agent = true
+
+    [shell.panel]
+    clipboard_position = "auto"
+    control_center_placement = "floating"
+    open_near_click_clipboard = true
+    session_placement = "floating"
+    session_position = "top_right"
+    wallpaper_placement = "floating"
+
+    [shell.screenshot]
+    directory = "/home/katzenkoenig/Pictures/Screenshots"
+
+    [shell.session]
+    grid = true
+    grid_columns = 2
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "noctalia msg session lock && systemctl suspend-then-hibernate"
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = "hibernate"
+        label = "Lock & Suspend"
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+[theme]
+builtin = "Ayu"
+community_palette = "Vesper"
+custom_palette = "Ayu-0f0f0f"
+mode = "dark"
+source = "custom"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "cava", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "gimp", "libreoffice", "obsidian", "heroiclauncher", "fastfetch", "zathura", "bat", "lazygit" ]
+
+[wallpaper]
+directory = "/home/katzenkoenig/Pictures/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    order = "alphabetical"
+
+    [wallpaper.default]
+    path = "/home/katzenkoenig/Pictures/Wallpapers/sothebys-md.brightspotcdn.jpg"
+
+    [wallpaper.last]
+    path = "/home/katzenkoenig/Pictures/Wallpapers/sothebys-md.brightspotcdn.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/katzenkoenig/Pictures/Wallpapers/sothebys-md.brightspotcdn.jpg"
+
+[widget.active_window]
+display = "text_only"
+min_length = 0
+
+[widget.audio_visualizer]
+color_1 = "tertiary"
+width = 29
+
+[widget.battery]
+color = "secondary"
+display_mode = "graphic"
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+format = "󰥔 {:%-I:%M %p | %a, %d %b}"
+
+[widget.cpu]
+show_label = false
+
+[widget.launcher]
+glyph = "apps-filled"
+
+[widget.media]
+hide_album_art = true
+hide_when_no_media = true
+max_length = 162
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
+scale = 0.94999999999999996
+
+[widget.ram]
+show_label = false
+
+[widget.session]
+color = "error"
+
+[widget.temp]
+show_label = false
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
+
+[widget.widget_2]
+type = "blackbartblues/keymap:widget"
+
+[widget.workspaces]
+active_pill_size = 2.4500000000000002
+empty_color = "tertiary"
+inactive_pill_size = 1.5
+scale = 1.05

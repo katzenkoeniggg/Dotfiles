@@ -9,9 +9,9 @@ local secondMod = "SUPER + SHIFT"
 local ipc = "noctalia msg "
 
 -- 1. Noctalia Binds
-hl.bind(mainMod .. "+Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"), { description = "Software Launcher" })
-hl.bind(mainMod .. "+S", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"), { description = "Control Center" })
-hl.bind(mainMod .. "+comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"), { description = "Settings App" })
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"), { description = "Software Launcher" })
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"), { description = "Control Center" })
+hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"), { description = "Settings App" })
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"), { description = "Notification Center" })
 hl.bind(secondMod .. " + N", hl.dsp.exec_cmd(ipc .. "notification-dnd-toggle"), { description = "DND Toggle" })
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"), { description = "Clipboard Panel" })
@@ -77,14 +77,14 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(codeEditor), { description = "Code ed
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(textEditor), { description = "Text editor" })
 hl.bind(secondMod .. " + CTRL +  V", hl.dsp.exec_cmd(volumeMixer), { description = "Volume mixer" })
 hl.bind(secondMod .. " + CTRL + O", hl.dsp.exec_cmd(officeSoftware), { description = "Office software" })
-hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "Task manager" })
+hl.bind("CTRL + ALT + DELETE", hl.dsp.exec_cmd(taskManager), { description = "Task manager" })
 
 -- 4. System Control
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { description = "Volume Up" })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"), { description = "Volume Down" })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"), { description = "Mute" })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { description = "Brightness Up" })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { description = "Brightness Down" })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { locked = true, repeating = true, description = "Volume Up" })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"), { locked = true, repeating = true, description = "Volume Down" })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"), { locked = true, repeating = true, description = "Mute" })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true, description = "Brightness Up" })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true, description = "Brightness Down" })
 
 -- 5. Workspaces
 for i = 1, 10 do
